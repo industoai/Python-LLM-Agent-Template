@@ -5,6 +5,7 @@
   "project_description": "Short description for the project",
   "project_type": ["basic_llm", "single_agent", "multi_agent"],
   "llm_provider": ["openai", "anthropic", "ollama"],
+  "model_name": "",
   "python_version": ["3.10", "3.12", "3.11"],
   "include_docker": ["no", "yes"],
   "version": "0.1.0",

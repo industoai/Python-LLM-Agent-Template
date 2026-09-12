@@ -63,7 +63,6 @@ python = "^{{cookiecutter.python_version}}"
 click = "^8.1.7"
 langchain = "^1.0"
 pydantic = "^2.0"
-pydantic-settings = "^2.0"
 dataclass-wizard = ">=0.35,<1.0"
 python-dotenv = "^1.0"
 

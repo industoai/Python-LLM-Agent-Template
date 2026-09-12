@@ -8,9 +8,6 @@ __pycache__/
 # poetry
 poetry.lock
 
-# Secrets
-.env
-
 # Unit test files
 .coverage
 .coverage.*
