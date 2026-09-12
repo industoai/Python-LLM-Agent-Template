@@ -7,7 +7,7 @@ class PromptLoader:
     """Load plain-text prompts from the prompt directory."""
 
     def __init__(self,prompt_directory: Path | None = None) -> None:
-        self.prompt_directory = (prompt_directory or Path("../../prompts"))
+        self.prompt_directory = (prompt_directory or Path(__file__).resolve().parents[2] / "prompts")
 
     def load(self, name: str) -> str:
         """Load a prompt by name."""
