@@ -1,4 +1,4 @@
-# Python-LLM-Agent-Template
+# Python LLM Agent Template
 This is a general template for developing LLM-based, agentic and agentic workflow projects.
 It mainly uses poetry and pre-commit libraries to make the whole checking and developing code semi-automatically.
 
