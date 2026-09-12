@@ -1,0 +1,98 @@
+[tool.poetry]
+name = "{{cookiecutter.project_slug}}"
+version = "{{cookiecutter.version}}"
+description = "{{cookiecutter.project_description}}"
+authors = ["{{cookiecutter.authors}} <{{cookiecutter.authors}}>"]
+readme = "README.md"
+packages = [{include = "{{cookiecutter.package_name}}", from = "src"}]
+
+[tool.poetry.scripts]
+{{cookiecutter.package_name}} = "{{cookiecutter.package_name}}.main:{{cookiecutter.package_name}}_cli"
+
+[tool.pylint.format]
+max-line-length=150     # This defines the maximum number of characters on a single line in pylint
+
+[tool.pylint.design]
+max-attributes=10
+max-positional-arguments=6
+max-args=6
+
+[tool.pylint.messages_control]
+disable=["fixme", "too-few-public-methods"]
+
+[tool.pylint.similarities]
+min-similarity-lines = 8    # Minimum lines number of a similarity.
+ignore-imports = true       # Ignore imports when computing similarities.
+
+[tool.pytest.ini_options]
+junit_family="xunit2"
+addopts="--cov={{cookiecutter.package_name}} --cov-fail-under=65 --cov-branch"
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+
+[tool.coverage.run]
+source = ["{{cookiecutter.package_name}}"]
+omit = ["tests/*"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+exclude_lines = [
+    "pragma: no cover",
+    "if TYPE_CHECKING:",
+    "if __name__ == .__main__.:",
+    "raise NotImplementedError",
+    "@abstractmethod"
+]
+
+[tool.bandit]
+exclude_dirs = ["tests"]
+skips = []
+
+[tool.mypy]
+python_version = "{{cookiecutter.python_version}}"
+files = ["src"]
+strict = true
+warn_unused_configs = true
+show_error_codes = true
+
+[tool.poetry.dependencies]
+python = "^{{cookiecutter.python_version}}"
+click = "^8.1.7"
+langchain = "^1.0"
+pydantic = "^2.0"
+pydantic-settings = "^2.0"
+dataclass-wizard = ">=0.35,<1.0"
+python-dotenv = "^1.0"
+
+{% if cookiecutter.project_type != "basic_llm" %}
+langgraph = "^1.0"
+{% endif %}
+
+{% if cookiecutter.llm_provider == "openai" %}
+langchain-openai = "^1.0"
+{% elif cookiecutter.llm_provider == "anthropic" %}
+langchain-anthropic = "^1.0"
+{% elif cookiecutter.llm_provider == "ollama" %}
+langchain-ollama = "^1.0"
+{% endif %}
+
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3"
+pytest-cov = "^6.0"
+coverage = "^7.6"
+pylint = "^3.3"
+black = "^24.10"
+mypy = "^1.13"
+bump2version = "^1.0.1"
+bandit = "^1.7"
+pre-commit = "^4.0"
+detect-secrets = "^1.5"
+
+[build-system]
+requires = ["poetry-core>=1.5.0"]
+build-backend = "poetry.core.masonry.api"

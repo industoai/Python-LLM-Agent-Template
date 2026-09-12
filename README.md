@@ -1,5 +1,5 @@
 # Python LLM Agent Template
-This is a general template for developing LLM-based, agentic and agentic workflow projects.
+This is a general template for developing LLM-based, simple agentic and multi-agentic workflow projects.
 It mainly uses poetry and pre-commit libraries to make the whole checking and developing code semi-automatically.
 
 ## How to Use
@@ -12,5 +12,10 @@ To use the code do as following:
 - Enter version (Better to keep the default one).
 - Enter Firstname and Lastname.
 - Enter your email.
+- Enter project type.
+- Enter LLM provider.
+- Enter Model name or leave it empty for default model.
+- Enter python version (Better to keep the default one).
+- Enter Docker support or not.
 
 

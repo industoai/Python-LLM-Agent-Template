@@ -1,8 +1,15 @@
 # Pycharm files
+.vscode/
 .idea/
+__pycache__/
+*.py[cod]
+*.egg-info/
 
 # poetry
 poetry.lock
+
+# Secrets
+.env
 
 # Unit test files
 .coverage
@@ -12,13 +19,25 @@ poetry.lock
 
 # mypy files
 .mypy_cache/
+.pylint.d/
+.ruff_cache/
 
 # Probable environments files
-.env
-.venv
+.venv/
 env/
 venv/
 
+# Packaging
+build/
+dist/
+
+# Logs
+*.log
+logs/
+
+# Operating systems
+.DS_Store
+Thumbs.db
 
 
 

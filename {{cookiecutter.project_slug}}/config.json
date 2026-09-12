@@ -1,0 +1,7 @@
+{
+  "model": {
+    "provider": "{{cookiecutter.llm_provider}}",
+    "name": "gpt-4o",
+    "temperature": 0.0
+  }
+}

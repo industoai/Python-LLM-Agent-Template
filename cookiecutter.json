@@ -1,0 +1,13 @@
+{
+  "project_name": "python-llm-agent-template",
+  "project_slug": "{{ cookiecutter.project_name|lower|replace(' ', '-')|replace('_', '-') }}",
+  "package_name": "{{ cookiecutter.project_name|lower|replace('python-','')|replace('-','_')|replace(' ','_') }}",
+  "project_description": "Short description for the project",
+  "project_type": ["basic_llm", "single_agent", "multi_agent"],
+  "llm_provider": ["openai", "anthropic", "ollama"],
+  "python_version": ["3.10", "3.12", "3.11"],
+  "include_docker": ["no", "yes"],
+  "version": "0.1.0",
+  "authors": "Afshin Dini",
+  "email": "afshin_dini@yahoo.com"
+}
